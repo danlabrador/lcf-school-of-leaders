@@ -20,7 +20,7 @@ type LoginFields = z.infer<typeof schema>;
 
 export function useLoginForm() {
   // MARK: Form
-  const { setItem: setEmail, getItem: getEmailFromLS } = useLocalStorage('email');
+  const { setItem: setEmail, setItem: getEmailFromLS } = useLocalStorage('email');
   const { setItem: setIsLoggedIn } = useLocalStorage('isLoggedIn');
   const {
     register,
@@ -60,7 +60,15 @@ export function useLoginForm() {
 
       reset();
 
+      console.log('test')
+
       // Handle form submission
+      useLocalStorage('id').setItem('1000000000001');
+      useLocalStorage('email').setItem(data.email);
+      useLocalStorage('familyName').setItem('Labrador');
+      useLocalStorage('givenName').setItem('Dan');
+      useLocalStorage('picture').setItem(`https://ui-avatars.com/api/?background=9050ad&color=fff&name=Dan+Labrador&size=40`);
+
       dispatch(
         setUser({
           id: 1000000000001,
@@ -70,6 +78,8 @@ export function useLoginForm() {
           picture: `https://ui-avatars.com/api/?background=9050ad&color=fff&name=Dan+Labrador&size=40`,
         })
       );
+
+      console.log('after dispatch')
 
       setIsLoggedIn('true');
     } catch (error) {
