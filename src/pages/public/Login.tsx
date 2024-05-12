@@ -5,10 +5,10 @@ import { Button } from '@/components/ui/button';
 import { useLoginForm } from '@/hooks/useLoginForm';
 import { LabeledTextInput } from '../../components/LabeledTextInput';
 
-export type FormValues = {
-  email: 'dan@upliftcodecamp.com';
-  password: 'swordfish';
-};
+export const FormValues = {
+  email: 'dan@upliftcodecamp.com',
+  password: 'swordfish'
+}
 
 const Login = () => {
   useGoogleSSO();
