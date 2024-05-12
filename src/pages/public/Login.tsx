@@ -6,8 +6,8 @@ import { useLoginForm } from '@/hooks/useLoginForm';
 import { LabeledTextInput } from '../../components/LabeledTextInput';
 
 export type FormValues = {
-  email: 'dan@upliftcodecamp.com';
-  password: 'swordfish';
+  email: string;
+  password: string;
 };
 
 const Login = () => {
