@@ -58,3 +58,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+#g_id_onload > div > div:first-child {
+  display: none;
+}
