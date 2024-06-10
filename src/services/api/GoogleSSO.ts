@@ -72,8 +72,6 @@ export default class GoogleIdentity {
       },
     });
 
-    console.log(import.meta.env.VITE_GOOGLE_CLOUD_CLIENT_ID as string);
-
     await google.accounts.id.renderButton(document.getElementById('g_id_onload'), {
       theme: 'outline', // outline, filled_blue, filled_black
       size: 'large', // small, medium, large

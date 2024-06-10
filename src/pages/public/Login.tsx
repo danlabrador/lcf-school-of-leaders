@@ -19,7 +19,7 @@ const Login = () => {
         <LoginFeatureImage />
         <WhiteLogo />
       </aside>
-      <div className='w-full h-[60px] md:hidden'/>
+      <div className="w-full h-[60px] md:hidden" />
       <main className="flex justify-center items-center w-full pb-40 md:p-0 lg:p-0 h-svh md:w-1/2">
         <form className="flex flex-col space-y-4 p-8 w-[384px]" onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-2xl font-extrabold text-center">Log in to Lighthouse</h1>
@@ -34,10 +34,7 @@ const Login = () => {
           <Button className="w-full" type="submit" disabled={isSubmitting}>
             Login
           </Button>
-          <div
-            id="g_id_onload"
-            data-client_id="744543541785-v89rrt123mnl76h2ek2e3fvbq15erpob.apps.googleusercontent.com"
-          />
+          <div id="g_id_onload" data-client_id={import.meta.env.VITE_GOOGLE_CLOUD_CLIENT_ID} />
           {errors.email || errors.password ? (
             <p className="text-red-500 text-sm">Invalid email or password.</p>
           ) : null}
