@@ -49,7 +49,7 @@ export default class GoogleIdentity {
   ): Promise<void> {
     /* global google */
     await google.accounts.id.initialize({
-      client_id: '744543541785-v89rrt123mnl76h2ek2e3fvbq15erpob.apps.googleusercontent.com',
+      client_id: import.meta.env.VITE_GOOGLE_CLOUD_CLIENT_ID as string,
       callback(response: GoogleLoginResponse): void {
         const userObject = jwtDecode(response.credential);
         this._googleUser = userObject as GoogleUser;
@@ -71,6 +71,8 @@ export default class GoogleIdentity {
         setPicture(user.picture);
       },
     });
+
+    console.log(import.meta.env.VITE_GOOGLE_CLOUD_CLIENT_ID as string);
 
     await google.accounts.id.renderButton(document.getElementById('g_id_onload'), {
       theme: 'outline', // outline, filled_blue, filled_black

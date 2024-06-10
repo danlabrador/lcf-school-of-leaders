@@ -25,3 +25,4 @@ dist-ssr
 
 # ignore client_secret.json from any directory
 **/client_secret.json
+.env
